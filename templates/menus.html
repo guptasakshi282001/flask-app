@@ -1,0 +1,25 @@
+<br>
+<h1>User Management System</h1>
+<br>
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+    <ul class="navbar-nav">
+        {% if session.name is defined and session.name %} 
+        <li class="nav-item">
+            <a class="nav-link text-primary" href="{{url_for('users')}}">Users</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link text-primary" href="{{url_for('register')}}">Add User</a>
+        </li>
+        <li class="nav-item float-right">
+            <a class="nav-link text-info">Logged in : {{session.name}}</a>
+        </li>
+        <li class="nav-item float-right">
+            <a class="nav-link text-warning" href="{{url_for('logout')}}">Logout</a>
+        </li>
+        {% else %} 
+        <li class="nav-item">
+            <a class="nav-link text-primary" href="{{url_for('login')}}">Login</a>
+        </li>
+        {% endif %} 
+    </ul>
+</nav>
